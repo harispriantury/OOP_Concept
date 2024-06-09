@@ -273,7 +273,8 @@ namespace EnigpusApp.Views
                 if (item.GetType() == typeof(Magazine))
                 {
                     Magazine magazine = (Magazine)item;
-                    Console.WriteLine(i + ". " + magazine.getTitle() + " type : " + "Magazine");
+                    Console.WriteLine(i + ". Type : " + "Magazine");
+                    Console.WriteLine("Title : " + magazine.getTitle());
                     Console.WriteLine("Code : " + magazine.Code);
                     Console.WriteLine("Title : " + magazine.Title);
                     Console.WriteLine("Publish Year :" + magazine.PublishYear);
@@ -282,7 +283,8 @@ namespace EnigpusApp.Views
                 else
                 {
                     Novel novel = (Novel)item;
-                    Console.WriteLine(i + ". " + novel.getTitle() + " type : " + "Novel");
+                    Console.WriteLine(i + ". Type : " + "Novel");
+                    Console.WriteLine("Title : " + novel.getTitle());
                     Console.WriteLine("Code : " + novel.Code);
                     Console.WriteLine("Title : " + novel.Title);
                     Console.WriteLine("Publish Year :" + novel.publishYear);

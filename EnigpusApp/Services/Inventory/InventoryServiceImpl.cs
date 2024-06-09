@@ -34,7 +34,7 @@ namespace EnigpusApp.Services.Inventory
 
         public Book SearchBook(string title)
         {
-            Book? book = books.Find(x => x.getTitle() == title);
+            Book? book = books.Find(x => x.getTitle().ToLower() == title.ToLower());
             return book;
         }
 
