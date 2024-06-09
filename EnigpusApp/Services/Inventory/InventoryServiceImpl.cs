@@ -12,19 +12,19 @@ namespace EnigpusApp.Services.Inventory
         private List<Book> books = new List<Book>();
         public InventoryServiceImpl()
         {
-            Magazine magazine = new Magazine("code1", "Kenanglah Aku", 2022, "Asrin");
-            Magazine magazine2 = new Magazine("code2", "Kenanglah Dia", 2023, "Asrin Asrin");
+            Magazine magazine = new Magazine("code1", "Judi", 2022, "Asrin");
+            Novel novel = new Novel("code2", "Slot", "Jihad",2023, "solehudin");
             books.Add(magazine);
-            books.Add (magazine2);
+            books.Add (novel);
         }
         public void AddBook(Book book)
         {
             books.Add(book);
         }
 
-        public void DeleteBook(string id)
+        public void DeleteBook(Book book)
         {
-            throw new NotImplementedException();
+            books.Remove(book);
         }
 
         public List<Book> GetAllBook()
@@ -32,16 +32,23 @@ namespace EnigpusApp.Services.Inventory
             return books;
         }
 
-        public List<Book> SearchBook(string title)
+        public Book SearchBook(string title)
         {
-            List<Book> list = new List<Book>();
-            list = books.FindAll(x => x.getTitle().Equals(title));
-            return list;
+            Book? book = books.Find(x => x.getTitle() == title);
+            return book;
         }
 
-        public Book updateBook(Book book)
+        public void updateBook(Book book)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < books.Count; i++)
+            {
+                if (books[i].getTitle() == book.getTitle())
+                {
+                    books[i] = book;
+                }
+            }
         }
+
+        
     }
 }
